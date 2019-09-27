@@ -1,0 +1,8 @@
+reset;
+model M0.mod;
+solve;
+shell ("del " & ("ig.INIVAL"));
+for {i in {1..3*Nfe}} {
+	printf "let x[%d]:=%5.4f;\n",i,x[i]>>("ig.INIVAL");
+	printf "let y[%d]:=%5.4f;\n",i,y[i]>>("ig.INIVAL");		
+}
